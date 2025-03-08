@@ -4,7 +4,7 @@ il file sarà incluso nei file php che si trovano in /php. */
 
 $DBHOST= "localhost";
 $DBUSER= "root";
-$DBPASSWORD= " ";
+$DBPASSWORD= "root";
 $DBNAME ="csAgenzia";
 
 /**
