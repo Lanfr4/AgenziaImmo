@@ -55,7 +55,7 @@ function writeMenu() {
                     </button>
                 </div>
                 <div class="col-3">
-                    <form name="tipodiCasa" action="abitazioni.php" method="post">
+                    <form name="tipoCasa" action="abitazioni.php" method="post">
                         <select class="form-select" name="tipoCasa" aria-label="Default select example">
                             <option value="0" selected>Seleziona tipo di casa</option>
                             <option value="1">Negozio</option>
