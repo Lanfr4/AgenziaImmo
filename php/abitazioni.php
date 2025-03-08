@@ -9,14 +9,13 @@
         $sql = "SELECT * FROM cs_immobile";
         $resultSet = $db->query($sql);
 
-
+    
         // Tabella HTML
         echo('<table class="table table-striped table-hover">
                 <caption>Lista dei prodotti disponibili</caption>
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">ID</th>
                         <th scope="col">Stato</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Prezzo Richiesto</th>
