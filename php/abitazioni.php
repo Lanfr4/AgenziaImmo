@@ -1,11 +1,10 @@
 <?php
-        //Libreria per tutte le pagine 
+        // Libreria per tutte le pagine 
         require('../include/lib.php');
 
         writeheader();
         writeMenu();
-
-        // Connessione al database
+    
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
         $sql = "SELECT * FROM cs_immobile";
         $resultSet = $db->query($sql);
@@ -29,20 +28,19 @@
                 </thead>
                 <tbody>');
 
-        // Vediamo i Contenuti della Tabella
+        // Iterazione attraverso i risultati
         while ($record = $resultSet->fetch_assoc()) {
             echo('<tr>
-                    <th scope="row">' . htmlspecialchars($record['id']) . '</th>
-                    <td>' . htmlspecialchars($record['stato']) . '</td>
-                    <td>' . htmlspecialchars($record['type']) . '</td>
-                    <td>' . htmlspecialchars($record['prezzoRichiesto']) . '</td>
-                    <td>' . htmlspecialchars($record['superfice']) . '</td>
-                    <td>' . htmlspecialchars($record['quartiere']) . '</td>
-                    <td>' . htmlspecialchars($record['indirizzo']) . '</td>
-                    <td>' . htmlspecialchars($record['Data_disponibilita']) . '</td>
+                    <th scope="row">' .($record['id']) . '</th>
+                    <td>' . ($record['stato']) . '</td>
+                    <td>' . ($record['type']) . '</td>
+                    <td>' . ($record['prezzoRichiesto']) . '</td>
+                    <td>' . ($record['superfice']) . '</td>
+                    <td>' . ($record['quartiere']) . '</td>
+                    <td>' . ($record['indirizzo']) . '</td>
+                    <td>' . ($record['Data_disponibilita']) . '</td>
                 </tr>');
         }
-
         echo('</tbody>
             </table>');
 
@@ -50,5 +48,4 @@
         $db->close();
 
         writefooter();
-
 ?>
