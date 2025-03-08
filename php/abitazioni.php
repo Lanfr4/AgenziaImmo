@@ -25,7 +25,6 @@
                         <th scope="col">Quartiere</th>
                         <th scope="col">Indirizzo</th>
                         <th scope="col">Data Disponibilità</th>
-                        <th scope="col">Azione</th>
                     </tr>
                 </thead>
                 <tbody>');
