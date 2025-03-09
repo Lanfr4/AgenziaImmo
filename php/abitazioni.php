@@ -11,7 +11,6 @@
             $quartiere = $_POST['quartiere'];
         }
 
-
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
         $sql = "SELECT * FROM cs_immobile"; 
         $resultSet = $db->query($sql);
