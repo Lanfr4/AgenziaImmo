@@ -23,3 +23,10 @@ INSERT INTO CS_IMMOBILE(stato, type, prezzoRichiesto, superfice, quartiere, indi
 VALUES("Offerto", "Villa", 15000 , 1000, "Vaticano", "Via della Spiritualita", "2023/03/17");
 INSERT INTO CS_IMMOBILE(stato, type, prezzoRichiesto, superfice, quartiere, indirizzo, Data_disponibilita)
 VALUES("Offerto", "Ufficio", 300 , 200, "Pupone", "Via dalle Palle ", "2020/02/02");
+
+INSERT INTO CS_ADMIN(email, password)
+VALUES("agenzia@gmail.com" , "12345678");
+INSERT INTO CS_ADMIN(email, password)
+VALUES("agenziaStage@gmail.com" , "230706");
+INSERT INTO CS_ADMIN(email, password)
+VALUES("agenziaStaff@gmail.com" , "040706");
