@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>');
 
-        if($tipocasa == 0 && $quartiere == 0){// Il cliente vuole guardare tutte le case, in qualsiasi quartiere e di qualsiasi tipo
+    if($tipocasa == 0 && $quartiere == 0){// Il cliente vuole guardare tutte le case, in qualsiasi quartiere e di qualsiasi tipo
 
         
         while ($record = $resultSet->fetch_assoc()) {
@@ -55,12 +55,12 @@
 
         // Chiusura della connessione
         $db->close();
-        }
+    }
 
-        else if($tipocasa == 0 && $quartiere !=0){// Il cliente vuole guardare un qualsiasi edificio in un determinato quartiere
+    else if($tipocasa == 0 && $quartiere !=0){// Il cliente vuole guardare un qualsiasi edificio in un determinato quartiere
             
             while ($record = $resultSet->fetch_assoc()) {
-                if($record.['quartiere'] == strval($quartiere)){
+                if($record.['quartiere'] == $quartiere){
                 echo('<tr>
                         <th scope="row">' .$record['id'] . '</th>
                         <td>' . $record['stato'] . '</td>
@@ -77,7 +77,7 @@
             }
         }
 
-        else if($tipocasa!=0 && $quartiere == 0){// Il cliente vuole guardare un determinato tipo di casa in tutti i quartieri
+    else if($tipocasa!=0 && $quartiere == 0){// Il cliente vuole guardare un determinato tipo di casa in tutti i quartieri
             while ($record = $resultSet->fetch_assoc()) {
                 if($record.['tipocasa'] == $tipocasa){
                 echo('<tr>
@@ -97,7 +97,7 @@
             }
 
             $db->close();
-        } 
+    } 
 /*
         else{// Il cliente ha scelto un determinato quartiere dove guardare un determinato tipo di edificio
 
@@ -123,3 +123,4 @@
 */
         writefooter();
 ?>
+
