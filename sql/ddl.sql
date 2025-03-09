@@ -45,11 +45,4 @@ CREATE TABLE CS_VENDITA(
 )ENGINE=InnoDB;
 
 
-CREATE TABLE CS_ADMIN(
-
-    id integer unsigned auto_increment,
-    email varchar(30) not null,
-    password varchar(10) not null
-
-)ENGINE=InnoDB;
 

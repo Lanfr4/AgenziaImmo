@@ -19,9 +19,6 @@ require("../include/lib.php");
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
-            
-            
-
         ');
 
     writefooter();
