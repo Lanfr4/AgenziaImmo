@@ -34,40 +34,11 @@
                 </thead>
                 <tbody>');
 
-    if($tipocasa == 0 && $quartiere == 0){// Il cliente vuole guardare tutte le case, in qualsiasi quartiere e di qualsiasi tipo
-
-        
-       
-    }
-    //1
-    else if($tipocasa == 0 && $quartiere !=0){// Il cliente vuole guardare un qualsiasi edificio in un determinato quartiere
-            
-            
-
-    else ($tipocasa!=0 && $quartiere == 0){
-
-    } 
-
-    
-
-            while ($record = $resultSet->fetch_assoc()) {
-                echo('<tr>
-                        <th scope="row">' .$record['id'] . '</th>
-                        <td>' . $record['stato'] . '</td>
-                        <td>' . $record['type'] . '</td>
-                        <td>' . $record['prezzoRichiesto']) . '</td>
-                        <td>' . $record['superfice'] . '</td>
-                        <td>' . $record['quartiere'] . '</td>
-                        <td>' . $record['indirizzo'] . '</td>
-                        <td>' . $record['Data_disponibilita'] . '</td>
-                    </tr>';
-            }
-            echo('</tbody>
-                </table>');
+             
 
             // Chiusura della connessione
             $db->close();
-            }
+            
         writefooter();
 ?>
 
