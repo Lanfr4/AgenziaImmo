@@ -78,31 +78,34 @@
                 $resultSet = $db->query($sql);
             }
             
-                while ($record = $resultSet->fetch_assoc()) {
-                    echo('<tr>
-                            <th scope="row">' . $record['id'] . '</th>
-                            <td class="status" id="status-' . $record['id'] . '">' . $record['stato'] . '</td>
-                            <td>' . $record['idType'] . '</td>
-                            <td>' . $record['prezzoRichiesto'] . '</td>
-                            <td>' . $record['superfice'] . '</td>
-                            <td>' . $record['idQuartiere'] . '</td>
-                            <td>' . $record['indirizzo'] . '</td>
-                            <td>' . $record['Data_disponibilita'] . '</td>');
-                            if($record.['stato'] == "Offerto"){
-                                echo('
-                                    <td>
-                                        <form action="modifica_stato.php" method="POST" class="reservation-form">
-                                            <input type="hidden" name="id" value="'. $record['id'] .'">
-                                            <button type="submit" class="btn btn-primary">Riservamelo</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                ');
-                            }
-                            else{
-                                echo('</tr>');
-                            }      
+            while ($record = $resultSet->fetch_assoc()) {
+                echo('<tr>
+                        <th scope="row">' . $record['id'] . '</th>
+                        <td class="status" id="status-' . $record['id'] . '">' . $record['stato'] . '</td>
+                        <td>' . $record['idType'] . '</td>
+                        <td>' . $record['prezzoRichiesto'] . '</td>
+                        <td>' . $record['superfice'] . '</td>
+                        <td>' . $record['idQuartiere'] . '</td>
+                        <td>' . $record['indirizzo'] . '</td>
+                        <td>' . $record['Data_disponibilita'] . '</td>');
+            
+                // Controlla se lo stato è "Offerto"
+                if ($record['stato'] == "Offerto") {
+                    echo('
+                        <td>
+                            <form action="modifica_stato.php" method="POST" class="reservation-form">
+                                <input type="hidden" name="id" value="'. $record['id'] .'">
+                                <button type="submit" class="btn btn-primary">Riservamelo</button>
+                            </form>
+                        </td>
+                    ');
+                } else {
+                    // Se non è "Offerto", aggiungi una cella vuota o un messaggio
+                    echo('<td></td>'); // Puoi anche personalizzare questo messaggio
                 }
+            
+                echo('</tr>'); // Chiudi la riga della tabella
+            }    
         echo('</tbody>
             </table>');
 
