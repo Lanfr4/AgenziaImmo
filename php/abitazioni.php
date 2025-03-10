@@ -38,10 +38,10 @@
                 if($tipocasa!=1){
 
                     $sql1 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto, immobile.superfice, quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
-                            FROM CS_IMMOBILE immobile
-                            JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
-                            JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id
-                            WHERE tipo.descrizione = '$tipoAbitazione'";
+                            FROM CS_IMMOBILE  AS  imm
+                            JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
+                            JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id
+                            WHERE tc.descrizione = '$idType'";
                     $resultSet = $db->query($sql1);
 
                 }
@@ -49,35 +49,33 @@
                 else if($quartiere!=1){
 
                     $sql2 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto,immobile.superfice,quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
-                            FROM CS_IMMOBILE immobile
-                            JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
-                            JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id";
+                            FROM CS_IMMOBILE  AS imm
+                            JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
+                            JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id";
                     $resultSet = $db->query($sql2);
 
                 }
                 else{
 
                     $sql3 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto, immobile.superfice, quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
-                            FROM CS_IMMOBILE immobile
-                            JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
-                            JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id
-                            WHERE quartiere.descrizione = '$quartiere' AND tipo.descrizione = '$tipoAbitazione'";
+                            FROM CS_IMMOBILE AS imm
+                            JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
+                            JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id
+                            WHERE q.descrizione = '$quartiere' AND tc.descrizione = '$tipoCasa'";
                     $resultSet = $db->query($sql3);
 
                 }
             }
             else{
-                
+
                 $sql = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto,immobile.superfice,quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
-                FROM CS_IMMOBILE immobile
+                FROM CS_IMMOBILE AS immobile
                 JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
                 JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id";
 
                 $resultSet = $db->query($sql);
             }
             
-
-
                 while ($record = $resultSet->fetch_assoc()) {
                     echo('<tr>
                             <th scope="row">' . $record['id'] . '</th>
@@ -102,30 +100,6 @@
         // Chiusura della connessione
         $db->close();
     
-
-/*
-        else{// Il cliente ha scelto un determinato quartiere dove guardare un determinato tipo di edificio
-
-            while ($record = $resultSet->fetch_assoc()) {
-                if($record.['quartiere'] == $quartiere && $record.['tipocasa'] == $tipocasa){
-                echo('<tr>
-                        <th scope="row">' .$record['id'] . '</th>
-                        <td>' . $record['stato'] . '</td>
-                        <td>' . $record['type'] . '</td>
-                        <td>' . $record['prezzoRichiesto']) . '</td>
-                        <td>' . $record['superfice'] . '</td>
-                        <td>' . $record['quartiere'] . '</td>
-                        <td>' . $record['indirizzo'] . '</td>
-                        <td>' . $record['Data_disponibilita'] . '</td>
-                    </tr>';
-                }
-            echo('</tbody>
-                </table>');
-            }
-            $db->close();
-        }
-        
-*/
         writefooter();
 ?>
 
