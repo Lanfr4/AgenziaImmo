@@ -49,14 +49,15 @@ function writeMenu(){
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid" "row">
                         <div class=col-3>
-                            <a class="navbar-brand" href="#">HOME</a>
+                            <center><a class="navbar-brand" href="index.php">HOME</a></center>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                         </div>
                         <div class="col-3">
+                            <form name ="tipodiCasa" action="abitazioni.php">
                                 <select class="form-select" aria-label="Default select example">
-                                    <option value="0" selected>Select Tipo di Casa</option>
+                                    <option value="0" selected>Seleziona tipo di casa</option>
                                     <option value="1">Negozio</option>
                                     <option value="2">Monolocale</option>
                                     <option value="3">Bilocale</option>
@@ -66,18 +67,27 @@ function writeMenu(){
                                     <option value="7">Capannone</option>
                                     <option value="8">Box</option>
                                 </select>
+                            </form>
                         </div>
-                        <div class="col-3>
-                                <form class="d-flex" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Quartiere" aria-label="Search">
-                                </form>
+                        <div class="col-3">
+                         <form name ="quartiere" action=" abitazioni.php">       
+                        <select class="form-select" aria-label="Default select example">
+                                    <option value="0" selected>Quartiere</option>
+                                    <option value="1">Trastevere</option>
+                                    <option value="2">Colosseo</option>
+                                    <option value="3">Vaticano</option>
+                                    <option value ="4">Parioli</option>
+
+                                </select>
                         </div>
+                    
                             <div class ="col-3">
-                                <a class="navbar-brand" href="#">INVIO</a>
+                                <center><a class="navbar-brand" href="abitazioni.php">INVIO</a></center>
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
                         </div>
+                    </div>
     </div>
     '); //*/
 
