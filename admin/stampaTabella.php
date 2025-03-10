@@ -12,7 +12,7 @@ echo('<table class="table table-striped table-hover">
                 <th scope="col">Quartiere</th>
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Data Disponibilità</th>
-                <th scope="col">Gestisci</th> <!-- Aggiunta della colonna "Gestisci" -->
+                <th scope="col">Gestisci</th>
             </tr>
         </thead>
         <tbody>');
@@ -29,8 +29,7 @@ while ($record = $resultSet->fetch_assoc()) {
             <td>' . $record['Data_disponibilita'] . '</td>
             <td>
                 <button class="btn btn-primary" onclick="gestisci(' . $record['id'] . ')">Gestisci</button>
-                <!-- Puoi anche usare un link -->
-                <!-- <a href="modifiche.php?id=' . $record['id'] . '" class="btn btn-primary">Gestisci</a> -->
+                <a href="modifiche.php?id=' . $record['id'] . '" class="btn btn-primary">Gestisci</a>
             </td>
         </tr>');
 }

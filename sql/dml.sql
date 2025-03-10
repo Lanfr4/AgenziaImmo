@@ -13,14 +13,14 @@ VALUES("Benito" ,"Meloni");
 INSERT INTO CS_VENDITORE(nome, cognome)
 VALUES("Francesco", "Totti");
 
-INSERT INTO CS_IMMOBILE(stato, type, prezzoRichiesto, superfice, quartiere, indirizzo, Data_disponibilita)
-VALUES("Offerto", "Bilocale", 3000 , 500, "Trastevere", "Via 1914 13A", "2025/07/04");
-INSERT INTO CS_IMMOBILE(stato, type, prezzoRichiesto, superfice, quartiere, indirizzo, Data_disponibilita)
-VALUES("Offerto", "Monolocale", 1550 , 230, "Parioli", "Via della Repubblica 95", "2026/01/28");
-INSERT INTO CS_IMMOBILE(stato, type, prezzoRichiesto, superfice, quartiere, indirizzo, Data_disponibilita)
-VALUES("Offerto", "Attico", 5000 , 630, "Colosseo", "Via Collodi 234", "2021/12/31");
-INSERT INTO CS_IMMOBILE(stato, type, prezzoRichiesto, superfice, quartiere, indirizzo, Data_disponibilita)
-VALUES("Offerto", "Villa", 15000 , 1000, "Vaticano", "Via della Spiritualita", "2023/03/17");
+INSERT INTO CS_IMMOBILE(stato, idType, prezzoRichiesto, superfice, idQuartiere, indirizzo, Data_disponibilita)
+VALUES("Offerto", 4, 3000 , 500, 2, "Via 1914 13A", "2025/07/04");
+INSERT INTO CS_IMMOBILE(stato,  idType, prezzoRichiesto, superfice,  idQuartiere, indirizzo, Data_disponibilita)
+VALUES("Offerto", 2, 1550 , 230, 3, "Via della Repubblica 95", "2026/01/28");
+INSERT INTO CS_IMMOBILE(stato,  idType, prezzoRichiesto, superfice,  idQuartiere, indirizzo, Data_disponibilita)
+VALUES("Offerto", 6, 5000 , 630, 4, "Via Collodi 234", "2021/12/31");
+INSERT INTO CS_IMMOBILE(stato,  idType, prezzoRichiesto, superfice,  idQuartiere, indirizzo, Data_disponibilita)
+VALUES("Offerto", 5, 15000 , 1000, 5, "Via della Spiritualita", "2023/03/17");
 
 
 INSERT INTO CS_ADMIN(email, password)
