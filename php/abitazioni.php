@@ -34,7 +34,7 @@
                 </thead>
                 <tbody>');
 
-            if($tipocasa != $quartiere){
+            if($tipocasa !=  1 && $quartiere!=1){
                 if($tipocasa!=1){
 
                     $sql1 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto, immobile.superfice, quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
