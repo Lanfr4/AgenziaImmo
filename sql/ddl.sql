@@ -4,8 +4,10 @@ CREATE TABLE CS_ACQUIRENTE(
     cognome varchar(20) not null,
     visite_fatte integer not null,
     capitale float not null,
+    idImmobileINT integer unsigned,
 
-    primary key(id)
+    primary key(id),
+    foreign key(idImmobileINT) references CS_IMMOBILE(id)
 )ENGINE=InnoDB;
 
 CREATE TABLE CS_VENDITORE(
@@ -16,6 +18,13 @@ CREATE TABLE CS_VENDITORE(
     primary key(id)
 )ENGINE=InnoDB;
 
+
+/*
+DATI CHE L' AGENZIA PUO MODIFICARE NELLA ZONA RISERVATA:
+-STATO
+-DATA DI DISPONIBILITA
+-PREZZORICHIESTO
+*/
 CREATE TABLE CS_IMMOBILE(
     id integer unsigned auto_increment,
     stato varchar(20) not null,
