@@ -41,7 +41,7 @@ CREATE TABLE CS_QUARTIERE(
 )ENGINE=InnoDB;
 
 CREATE TABLE CS_TIPOCASA(
-    id integer unsigned auto_increment
+    id integer unsigned auto_increment,
     descrizione varchar(30) not null,
 
     primary key(id)
