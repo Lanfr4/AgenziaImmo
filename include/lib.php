@@ -2,10 +2,10 @@
 /* Questo file contiene tutte le funzioni utili e che saranno richiamate nelle diverse pagine,
 il file sarà incluso nei file php che si trovano in /php. */
 
-$DBHOST= "localhost";
-$DBUSER= "root";
-$DBPASSWORD= " ";
-$DBNAME ="csAgenzia";
+    $DBHOST= "localhost";
+    $DBUSER= "root";
+    $DBPASSWORD= "root";
+    $DBNAME ="csagenziaimmo";
 
 /**
  * Funzione che genera la parte iniziale di ogni pagina, costruendo il corpo della pagina partendo dai tag fondamentali, genera il codice fino
@@ -44,52 +44,46 @@ function writeFooter(){
 /**
  * Funzione che genera il codice HTML e Bootstrap per rappresentare una barra di navigazione ad inizio pagina o comunque dove viene richiamata.
  */
-function writeMenu(){
+function writeMenu() {
     echo('
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid" "row">
-                        <div class=col-3>
-                            <center><a class="navbar-brand" href="index.php">HOME</a></center>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
-                        <div class="col-3">
-                            <form name ="tipodiCasa" action="abitazioni.php">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="0" selected>Seleziona tipo di casa</option>
-                                    <option value="1">Negozio</option>
-                                    <option value="2">Monolocale</option>
-                                    <option value="3">Bilocale</option>
-                                    <option value ="4">Villa</option>
-                                    <option value ="5">Attico</option>
-                                    <option value ="6">Uffico</option>
-                                    <option value="7">Capannone</option>
-                                    <option value="8">Box</option>
-                                </select>
-                            </form>
-                        </div>
-                        <div class="col-3">
-                         <form name ="quartiere" action=" abitazioni.php">       
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="0" selected>Quartiere</option>
-                                    <option value="1">Trastevere</option>
-                                    <option value="2">Colosseo</option>
-                                    <option value="3">Vaticano</option>
-                                    <option value ="4">Parioli</option>
-
-                                </select>
-                        </div>
-                    
-                            <div class ="col-3">
-                                <center><a class="navbar-brand" href="abitazioni.php">INVIO</a></center>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                        </div>
-                    </div>
-    </div>
-    '); //*/
+            <div class="container-fluid row">
+                <div class="col-3">
+                    <center><a class="navbar-brand" href="index.php">HOME</a></center>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col-3">
+                    <form name="tipoCasa" action="abitazioni.php" method="post">
+                        <select class="form-select" name="tipoCasa" aria-label="Default select example">
+                            <option value="0" selected>Seleziona tipo di casa</option>
+                            <option value="1">Negozio</option>
+                            <option value="2">Monolocale</option>
+                            <option value="3">Bilocale</option>
+                            <option value="4">Villa</option>
+                            <option value="5">Attico</option>
+                            <option value="6">Ufficio</option>
+                            <option value="7">Capannone</option>
+                            <option value="8">Box</option>
+                        </select>
+                </div>
+                <div class="col-3">
+                    <select class="form-select" name="quartiere" aria-label="Default select example">
+                        <option value="0" selected>Quartiere</option>
+                        <option value="1">Trastevere</option>
+                        <option value="2">Colosseo</option>
+                        <option value="3">Vaticano</option>
+                        <option value="4">Parioli</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <button type="submit" class="btn btn-primary">INVIO</button>
+                </div>
+                </form>
+            </div>
+        </nav>
+    ');
 
     return;
 }
