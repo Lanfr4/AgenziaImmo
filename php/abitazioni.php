@@ -35,47 +35,49 @@
                 <tbody>');
 
             if($tipocasa !=  1 && $quartiere!=1){
+                
                 if($tipocasa!=1){
 
-                    $sql1 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto, immobile.superfice, quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
+                    $sql1 = "SELECT imm.id, imm.stato, tc.id AS idType, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
                             FROM CS_IMMOBILE  AS  imm
                             JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
                             JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id
-                            WHERE tc.descrizione = '$idType'";
+                            WHERE tc.id = '$tipocasa'";
                     $resultSet = $db->query($sql1);
 
                 }
 
                 else if($quartiere!=1){
 
-                    $sql2 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto,immobile.superfice,quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
+                    $sql2 = "SELECT imm.id, imm.stato, tc.id AS idType, imm.prezzoRichiesto,imm.superfice,q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
                             FROM CS_IMMOBILE  AS imm
                             JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
-                            JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id";
+                            JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id
+                            WHERE q.id = '$quartiere'";
                     $resultSet = $db->query($sql2);
 
                 }
                 else{
 
-                    $sql3 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto, immobile.superfice, quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
+                    $sql3 = "SELECT imm.id, imm.stato, tc.id AS idType, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
                             FROM CS_IMMOBILE AS imm
                             JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
                             JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id
-                            WHERE q.descrizione = '$quartiere' AND tc.descrizione = '$tipoCasa'";
+                            WHERE q.id = '$quartiere' AND tc.id = '$tipoCasa'";
                     $resultSet = $db->query($sql3);
 
                 }
             }
             else{
 
-                $sql = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto,immobile.superfice,quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
-                FROM CS_IMMOBILE AS immobile
-                JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
-                JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id";
+                $sql = "SELECT imm.id, imm.stato, tc.id AS idType, imm.prezzoRichiesto,imm.superfice,q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
+                FROM CS_IMMOBILE AS imm
+                JOIN CS_TIPOCASA AS  tc ON imm.idType = tc.id
+                JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id";
 
                 $resultSet = $db->query($sql);
             }
-
+            
                 while ($record = $resultSet->fetch_assoc()) {
                     echo('<tr>
                             <th scope="row">' . $record['id'] . '</th>
