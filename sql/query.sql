@@ -1,4 +1,4 @@
-QUERY DELLA PROPOSTA 4
+--QUERY DELLA PROPOSTA 4
 ----------------------
 
 --1

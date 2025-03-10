@@ -19,15 +19,33 @@ CREATE TABLE CS_VENDITORE(
 CREATE TABLE CS_IMMOBILE(
     id integer unsigned auto_increment,
     stato varchar(20) not null,
-    type varchar(20) not null,
+    idType integer unsigned,
     prezzoRichiesto float not null,
     superfice float not null,
-    quartiere varchar(20) not null,
+    idQuartiere integer unsigned,
     indirizzo varchar(30) not null,
     Data_disponibilita date not null,
 
+    primary key(id),
+    foreign key(idQuartiere) references CS_QUARTIERE(id),
+    foreign key(idType) references CS_TIPOCASA(id)
+
+)ENGINE=InnoDB;
+
+CREATE TABLE CS_QUARTIERE(
+
+    id integer unsigned auto_increment,
+    descrizione varchar(30) not null,
+
     primary key(id)
 )ENGINE=InnoDB;
+
+CREATE TABLE CS_TIPOCASA(
+    id integer unsigned auto_increment
+    descrizione varchar(30) not null,
+
+    primary key(id)
+)ENGINE = InnoDB;
 
 CREATE TABLE CS_VENDITA(
     id integer unsigned auto_increment,
