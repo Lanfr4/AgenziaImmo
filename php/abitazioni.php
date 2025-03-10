@@ -38,42 +38,42 @@
                 
                 if($tipocasa!=1){
 
-                    $sql1 = "SELECT imm.id, imm.stato, tc.id AS idType, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
-                            FROM CS_IMMOBILE  AS  imm
-                            JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
-                            JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id
-                            WHERE tc.id = '$tipocasa'";
-                    $resultSet = $db->query($sql1);
+                    $sql1 = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
+                                FROM CS_IMMOBILE AS imm
+                                JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
+                                JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id
+                                WHERE tc.id = '$tipocasa'";
+                                $resultSet = $db->query($sql1);
 
                 }
 
                 else if($quartiere!=1){
 
-                    $sql2 = "SELECT imm.id, imm.stato, tc.id AS idType, imm.prezzoRichiesto,imm.superfice,q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
-                            FROM CS_IMMOBILE  AS imm
-                            JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
-                            JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id
-                            WHERE q.id = '$quartiere'";
-                    $resultSet = $db->query($sql2);
+                    $sql2 = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
+                                FROM CS_IMMOBILE AS imm
+                                JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
+                                JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id
+                                WHERE q.id = '$quartiere'";
+                                $resultSet = $db->query($sql2);
 
                 }
                 else{
 
-                    $sql3 = "SELECT imm.id, imm.stato, tc.id AS idType, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
+                    $sql3 = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
                             FROM CS_IMMOBILE AS imm
-                            JOIN CS_TIPOCASA  AS tc ON imm.idType = tc.id
-                            JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id
-                            WHERE q.id = '$quartiere' AND tc.id = '$tipoCasa'";
-                    $resultSet = $db->query($sql3);
+                            JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
+                            JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id
+                            WHERE q.id = '$quartiere' AND tc.id = '$tipocasa'";
+                            $resultSet = $db->query($sql3);
 
                 }
             }
             else{
 
-                $sql = "SELECT imm.id, imm.stato, tc.id AS idType, imm.prezzoRichiesto,imm.superfice,q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
-                FROM CS_IMMOBILE AS imm
-                JOIN CS_TIPOCASA AS  tc ON imm.idType = tc.id
-                JOIN CS_QUARTIERE  AS q ON imm.idQuartiere = q.id";
+                $sql = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
+                        FROM CS_IMMOBILE AS imm
+                        JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
+                        JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id";
 
                 $resultSet = $db->query($sql);
             }
