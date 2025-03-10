@@ -77,7 +77,7 @@
 
                 $resultSet = $db->query($sql);
             }
-
+            
                 while ($record = $resultSet->fetch_assoc()) {
                     echo('<tr>
                             <th scope="row">' . $record['id'] . '</th>
