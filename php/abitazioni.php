@@ -87,14 +87,21 @@
                             <td>' . $record['superfice'] . '</td>
                             <td>' . $record['idQuartiere'] . '</td>
                             <td>' . $record['indirizzo'] . '</td>
-                            <td>' . $record['Data_disponibilita'] . '</td>
-                            <td>
-                                <form action="modifica_stato.php" method="POST" class="reservation-form">
-                                    <input type="hidden" name="id" value="'. $record['id'] .'">
-                                    <button type="submit" class="btn btn-primary">Riservamelo</button>
-                                </form>
-                            </td>
-                        </tr>');
+                            <td>' . $record['Data_disponibilita'] . '</td>');
+                            if($record.['stato'] == "Offerto"){
+                                echo('
+                                    <td>
+                                        <form action="modifica_stato.php" method="POST" class="reservation-form">
+                                            <input type="hidden" name="id" value="'. $record['id'] .'">
+                                            <button type="submit" class="btn btn-primary">Riservamelo</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                ');
+                            }
+                            else{
+                                echo('</tr>');
+                            }      
                 }
         echo('</tbody>
             </table>');
