@@ -12,15 +12,10 @@
         }
 
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
-        //Query per associare gli ID delle Tabelle CS_TIPOCASA e CS_QUARTIERE cin le rispettive variabili
-        $sql = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto,immobile.superfice,quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
-                FROM CS_IMMOBILE immobile
-                JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
-                JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id";; 
-        $resultSet = $db->query($sql);
+
         
-        echo "Tipo Casa: " . htmlspecialchars($tipocasa) . "<br>";
-        echo "Quartiere: " . htmlspecialchars($quartiere) . "<br>";
+        //echo "Tipo Casa: " . htmlspecialchars($tipocasa) . "<br>";
+        //echo "Quartiere: " . htmlspecialchars($quartiere) . "<br>";
 
         echo('<table class="table table-striped table-hover">
                 <caption>Lista degli Immobili </caption>
@@ -39,8 +34,50 @@
                 </thead>
                 <tbody>');
 
+            if($tipocasa != $quartiere){
+                if($tipocasa!=1){
 
-        
+                    $sql1 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto, immobile.superfice, quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
+                            FROM CS_IMMOBILE immobile
+                            JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
+                            JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id
+                            WHERE tipo.descrizione = '$tipoAbitazione'";
+                    $resultSet = $db->query($sql1);
+
+                }
+
+                else if($quartiere!=1){
+
+                    $sql2 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto,immobile.superfice,quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
+                            FROM CS_IMMOBILE immobile
+                            JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
+                            JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id";
+                    $resultSet = $db->query($sql2);
+
+                }
+                else{
+
+                    $sql3 = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto, immobile.superfice, quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
+                            FROM CS_IMMOBILE immobile
+                            JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
+                            JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id
+                            WHERE quartiere.descrizione = '$quartiere' AND tipo.descrizione = '$tipoAbitazione'";
+                    $resultSet = $db->query($sql3);
+
+                }
+            }
+            else{
+                
+                $sql = "SELECT immobile.id, immobile.stato, tipo.descrizione AS idType, immobile.prezzoRichiesto,immobile.superfice,quartiere.descrizione AS idQuartiere, immobile.indirizzo, immobile.Data_disponibilita
+                FROM CS_IMMOBILE immobile
+                JOIN CS_TIPOCASA tipo ON immobile.idType = tipo.id
+                JOIN CS_QUARTIERE quartiere ON immobile.idQuartiere = quartiere.id";
+
+                $resultSet = $db->query($sql);
+            }
+            
+
+
                 while ($record = $resultSet->fetch_assoc()) {
                     echo('<tr>
                             <th scope="row">' . $record['id'] . '</th>
@@ -53,7 +90,7 @@
                             <td>' . $record['Data_disponibilita'] . '</td>
                             <td>
                                 <form action="modifica_stato.php" method="POST" class="reservation-form">
-                                    <input type="hidden" name="id" value="' . $record['id'] . '">
+                                    <input type="hidden" name="id" value="'. $record['id'] .'">
                                     <button type="submit" class="btn btn-primary">Riservamelo</button>
                                 </form>
                             </td>

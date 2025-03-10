@@ -57,24 +57,24 @@ function writeMenu() {
                 <div class="col-3">
                     <form name="tipoCasa" action="abitazioni.php" method="post">
                         <select class="form-select" name="tipoCasa" aria-label="Default select example">
-                            <option value="0" selected>Seleziona tipo di casa</option>
-                            <option value="1">Negozio</option>
-                            <option value="2">Monolocale</option>
-                            <option value="3">Bilocale</option>
-                            <option value="4">Villa</option>
-                            <option value="5">Attico</option>
-                            <option value="6">Ufficio</option>
-                            <option value="7">Capannone</option>
-                            <option value="8">Box</option>
+                            <option value="1" selected>Seleziona tipo di casa</option>
+                            <option value="2">Negozio</option>
+                            <option value="3">Monolocale</option>
+                            <option value="4">Bilocale</option>
+                            <option value="5">Villa</option>
+                            <option value="6">Attico</option>
+                            <option value="7">Ufficio</option>
+                            <option value="8">Capannone</option>
+                            <option value="9">Box</option>
                         </select>
                 </div>
                 <div class="col-3">
                     <select class="form-select" name="quartiere" aria-label="Default select example">
-                        <option value="0" selected>Quartiere</option>
-                        <option value="1">Trastevere</option>
-                        <option value="2">Colosseo</option>
-                        <option value="3">Vaticano</option>
-                        <option value="4">Parioli</option>
+                        <option value="1" selected>Quartiere</option>
+                        <option value="2">Trastevere</option>
+                        <option value="3">Colosseo</option>
+                        <option value="4">Vaticano</option>
+                        <option value="5">Parioli</option>
                     </select>
                 </div>
                 <div class="col-3">
