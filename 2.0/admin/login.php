@@ -19,9 +19,5 @@ echo('<form method="POST" action="admin.php">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>');
-
-
-
-
 writeFooter()
 ?>

@@ -7,7 +7,11 @@
         $password = $_POST['password'];
     }
 
+    $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
 
-    
+    $sql = "SELECT * FROM admin.id,  ";
+
+    $resultset= 
+
     echo('tutto apposto');
 ?>
