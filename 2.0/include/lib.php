@@ -77,10 +77,13 @@ function writeMenu() {
                         <option value="5">Parioli</option>
                     </select>
                 </div>
-                <div class="col-3">
-                    <button type="submit" class="btn btn-primary">INVIO</button>
-                </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-primary">INVIO</button>
+                    </div>
                 </form>
+                    </div>
+                        <a class="navbar-brand" href="login.php?scelta=logout">Esci</a>
+                    </div>
             </div>
         </nav>
     ');
