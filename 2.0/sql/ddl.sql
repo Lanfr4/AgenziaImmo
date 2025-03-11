@@ -77,5 +77,5 @@ CREATE TABLE CS_ADMIN(
     email varchar(30) not null,
     password varchar(30) not null,
 
-    primary key(id)
+    primary key(id, email, password)
 )ENGINE=InnoDB;
