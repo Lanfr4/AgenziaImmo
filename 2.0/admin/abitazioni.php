@@ -5,6 +5,8 @@
         writeheader();
         writeMenu();
 
+        $tipocasa;
+        
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Recupera i dati dal modulo
             $tipocasa = $_POST['tipodiCasa'];
@@ -35,7 +37,6 @@
                 <tbody>');
 
             if($tipocasa !=  1 && $quartiere!=1){
-                
                 if($tipocasa!=1){
 
                     $sql1 = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
