@@ -7,7 +7,7 @@
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Recupera i dati dal modulo
-            $tipocasa = $_POST['tipoCasa'];
+            $tipocasa = $_POST['tipodiCasa'];
             $quartiere = $_POST['quartiere'];
         }
 
