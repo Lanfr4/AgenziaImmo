@@ -13,13 +13,13 @@
 
         case "venditaAbitazione" :{
 
-        }
+        };
         case "aggiungiAbitazione" :{
 
-        }
+        };
         case "gestisciAbitazione" :{
 
-        }
+        };
     }
 
 ?>
