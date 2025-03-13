@@ -41,7 +41,7 @@
                 <tbody>');
             if($tipocasa>1 || $quartiere>1){
                 if($tipocasa>1 && $quartiere == 1){
-                    echo ("toc toc");
+                    //echo ("toc toc");
                     $sql1 = "SELECT imm.id, imm.stato, tc.descrizione AS idType,  imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
                                 FROM CS_IMMOBILE AS imm
                                 JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
