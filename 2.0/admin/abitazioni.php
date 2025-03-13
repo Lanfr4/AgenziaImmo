@@ -1,4 +1,8 @@
 <?php
+        session_start();
+        if(!isset($_SESSION['logged'])) $_SESSION['logged'] = false;
+        if(!isset($_REQUEST['scelta'])) $sc = null; else $sc = $_REQUEST['scelta'];
+    
         // Libreria per tutte le pagine 
         require('../include/lib.php');
 

@@ -9,5 +9,17 @@
 
     writeFooter();
 
+    switch($sc){
+
+        case "venditaAbitazione" :{
+
+        }
+        case "aggiungiAbitazione" :{
+
+        }
+        case "gestisciAbitazione" :{
+
+        }
+    }
 
 ?>
