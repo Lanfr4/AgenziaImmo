@@ -28,6 +28,7 @@ echo('<table class="table table-striped table-hover">
                     <td>' . $record['indirizzo'] . '</td>
                     <td>' . $record['Data_disponibilita'] . '</td>
                 </tr>';
+                
         }
         echo('</tbody>
             </table>');
