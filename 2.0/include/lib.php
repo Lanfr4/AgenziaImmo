@@ -72,9 +72,9 @@ function writeMenu() {
             <select class="form-select" name="quartiere" aria-label="Default select example">
                 <option value="1" selected>Quartiere</option>
                 <option value="2">Trastevere</option>
-                <option value="3">Colosseo</option>
-                <option value="4">Vaticano</option>
-                <option value="5">Parioli</option>
+                <option value="3">Parioli</option>
+                <option value="4">Colosseo</option>
+                <option value="5">Vaticano</option>
             </select>
         </div>
         <div class="col-3">

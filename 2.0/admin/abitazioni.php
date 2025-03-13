@@ -20,8 +20,8 @@
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
         writeMenu();
         
-        echo "Tipo Casa: " . htmlspecialchars($tipocasa) . "<br>";
-        echo "Quartiere: " . htmlspecialchars($quartiere) . "<br>";
+        //echo "Tipo Casa: " . htmlspecialchars($tipocasa) . "<br>";
+        //echo "Quartiere: " . htmlspecialchars($quartiere) . "<br>";
 
         echo('<table class="table table-striped table-hover">
                 <caption>Lista degli Immobili </caption>
@@ -59,7 +59,7 @@
                                 JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
                                 JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id
                                 WHERE q.id = '$quartiere'";
-                            echo($sql2);
+
                             $resultSet = $db->query($sql2);
                 }
             }
