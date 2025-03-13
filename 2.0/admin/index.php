@@ -35,6 +35,7 @@
             if($sc == "logout"){
                 $_SESSION['logged'] = false;
                 session_destroy();
+                //header("index.php");
             }
             
             if($_SESSION['logged'] == true){ // se sono loggato mostro il gestionale con menu.
@@ -42,13 +43,11 @@
                 writeMenu();
             
                 // << your code start here >>
-                    echo('<div class="alert alert-success">Pare funzionare tutto E sono pure loggato!</div>');
+                    //echo('<div class="alert alert-success">Pare funzionare tutto E sono pure loggato!</div>');
                 // << end fo your code >>
         }
         else{
             echo('<div class="alert alert-danger">Non sei loggato</div>');
-            header("login.php");
-
         }
     }
     else{

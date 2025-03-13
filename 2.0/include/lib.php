@@ -88,20 +88,20 @@ function writeMenu() {
     </div>
 </nav>
 <br>
-<div class="container-fluid d-flex justify-content-center">
-    <div class="row">
-        <div class="col-6 text-center">
-            <form name="vendita" action="modifiche.php?scelta=venditaAbitazione" method="post">
-                <button type="submit" class="btn btn-primary">Vendita</button>
-            </form>
-        </div>
-        <div class="col-6 text-center">
-            <form name="Aggiungi" action="modifiche.php?scelta=aggiungiAbitazione"  method="post">
-                <button type="submit" class="btn btn-primary">Aggiungi</button>
-            </form>
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="row">
+            <div class="col-6 text-center">
+                <form name="vendita" action="modifiche.php?scelta=venditaAbitazione" method="post">
+                    <button type="submit" class="btn btn-primary">Vendita</button>
+                </form>
+            </div>
+            <div class="col-6 text-center">
+                <form name="Aggiungi" action="modifiche.php?scelta=aggiungiAbitazione"  method="post">
+                    <button type="submit" class="btn btn-primary">Aggiungi</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
     ');
 
     return;

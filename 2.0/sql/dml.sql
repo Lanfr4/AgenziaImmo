@@ -7,6 +7,8 @@ VALUES("Petunia", "Giannizzari", 3, 1260);
 
 
 INSERT INTO CS_IMMOBILE(stato, idType, prezzoRichiesto, superfice, idQuartiere, indirizzo, Data_disponibilita)
+VALUES("Offerto", 4, 6500 , 340, 3, "Via del Lavoro", "2025/04/10");
+INSERT INTO CS_IMMOBILE(stato, idType, prezzoRichiesto, superfice, idQuartiere, indirizzo, Data_disponibilita)
 VALUES("Offerto", 4, 3000 , 500, 2, "Via 1914 13A", "2025/07/04");
 INSERT INTO CS_IMMOBILE(stato,  idType, prezzoRichiesto, superfice,  idQuartiere, indirizzo, Data_disponibilita)
 VALUES("Offerto", 2, 1550 , 230, 3, "Via della Repubblica 95", "2026/01/28");

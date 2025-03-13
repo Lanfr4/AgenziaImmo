@@ -7,20 +7,21 @@
         require('../include/lib.php');
 
         writeheader();
-        writeMenu();
 
-        
+        $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Recupera i dati dal modulo
             $tipocasa = $_POST['tipodiCasa'];
             $quartiere = $_POST['quartiere'];
         }
+        
+        if($_SESSION['logged'] == true){
 
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
-
+        writeMenu();
         
-        //echo "Tipo Casa: " . htmlspecialchars($tipocasa) . "<br>";
-        //echo "Quartiere: " . htmlspecialchars($quartiere) . "<br>";
+        echo "Tipo Casa: " . htmlspecialchars($tipocasa) . "<br>";
+        echo "Quartiere: " . htmlspecialchars($quartiere) . "<br>";
 
         echo('<table class="table table-striped table-hover">
                 <caption>Lista degli Immobili </caption>
@@ -38,43 +39,33 @@
                     </tr>
                 </thead>
                 <tbody>');
-
-            if( $tipocasa!=1 && $quartiere!=1){
-                if($tipocasa!=1){
-
-                    $sql1 = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
+            if($tipocasa>1 || $quartiere>1){
+                if($tipocasa>1 && $quartiere == 1){
+                    echo ("toc toc");
+                    $sql1 = "SELECT imm.id, imm.stato, tc.descrizione AS idType,  imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, imm.indirizzo, imm.Data_disponibilita
                                 FROM CS_IMMOBILE AS imm
                                 JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
                                 JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id
                                 WHERE tc.id = '$tipocasa'";
+                                
                                 $resultSet = $db->query($sql1);
 
                 }
 
-                else if($quartiere!=1){
+                else if($quartiere>1 && $tipocasa==1){
 
-                    $sql2 = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
+                    $sql2 = "SELECT imm.id, imm.stato, tc.descrizione AS idType,  imm.prezzoRichiesto, imm.superfice, q.descrizione AS idQuartiere,  imm.indirizzo, imm.Data_disponibilita
                                 FROM CS_IMMOBILE AS imm
                                 JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
                                 JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id
                                 WHERE q.id = '$quartiere'";
-                                $resultSet = $db->query($sql2);
-
-                }
-                else{
-
-                    $sql3 = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
-                            FROM CS_IMMOBILE AS imm
-                            JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
-                            JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id
-                            WHERE q.id = '$quartiere' AND tc.id = '$tipocasa'";
-                            $resultSet = $db->query($sql3);
-
+                            echo($sql2);
+                            $resultSet = $db->query($sql2);
                 }
             }
             else{
 
-                $sql = "SELECT imm.id, imm.stato, tc.id AS idType, tc.descrizione AS tipoCasa, imm.prezzoRichiesto, imm.superfice, q.id AS idQuartiere, q.descrizione AS quartiere, imm.indirizzo, imm.Data_disponibilita
+                $sql = "SELECT imm.id, imm.stato, tc.descrizione AS idType,  imm.prezzoRichiesto, imm.superfice, q.descrizione AS idQuartiere,  imm.indirizzo, imm.Data_disponibilita
                         FROM CS_IMMOBILE AS imm
                         JOIN CS_TIPOCASA AS tc ON imm.idType = tc.id
                         JOIN CS_QUARTIERE AS q ON imm.idQuartiere = q.id";
@@ -82,7 +73,7 @@
                 $resultSet = $db->query($sql);
             }
             
-            while ($record = $resultSet->fetch_assoc()) {
+            while ($record = $resultSet->fetch_assoc()){
                 echo('<tr>
                         <th scope="row">' . $record['id'] . '</th>
                         <td class="status" id="status-' . $record['id'] . '">' . $record['stato'] . '</td>
@@ -101,13 +92,17 @@
                     </tr>
                     ');
                 }
-                   
+
         echo('</tbody>
             </table>');
 
         // Chiusura della connessione
         $db->close();
-    
-        writefooter();
+        }
+        else{
+            echo('<a href="index.php">Utente non loggato, eseguire il login</div>');
+        }
+
+    writefooter();
 ?>
 
