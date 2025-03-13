@@ -47,45 +47,59 @@ function writeFooter(){
 function writeMenu() {
     echo('
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid row">
-                <div class="col-3">
-                    <center><a class="navbar-brand" href="index.php">HOME</a></center>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="col-3">
-                    <form name="tipoCasa" action="abitazioni.php" method="post">
-                        <select class="form-select" name="tipodiCasa" aria-label="Default select example">
-                            <option value="1" selected>Seleziona tipo di casa</option>
-                            <option value="2">Negozio</option>
-                            <option value="3">Monolocale</option>
-                            <option value="4">Bilocale</option>
-                            <option value="5">Villa</option>
-                            <option value="6">Attico</option>
-                            <option value="7">Ufficio</option>
-                            <option value="8">Capannone</option>
-                            <option value="9">Box</option>
-                        </select>
-                </div>
-                <div class="col-3">
-                    <select class="form-select" name="quartiere" aria-label="Default select example">
-                        <option value="1" selected>Quartiere</option>
-                        <option value="2">Trastevere</option>
-                        <option value="3">Colosseo</option>
-                        <option value="4">Vaticano</option>
-                        <option value="5">Parioli</option>
-                    </select>
-                </div>
-                    <div class="col-3">
-                        <button type="submit" class="btn btn-primary">INVIO</button>
-                    </div>
-                </form>
-                    </div>
-                        <a class="navbar-brand" href="login.php?scelta=logout">Esci</a>
-                    </div>
-            </div>
-        </nav>
+    <div class="container-fluid row">
+        <div class="col-3">
+            <center><a class="navbar-brand" href="index.php">HOME</a></center>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="col-3">
+            <form name="tipoCasa" action="abitazioni.php" method="post">
+                <select class="form-select" name="tipodiCasa" aria-label="Default select example">
+                    <option value="1" selected>Seleziona tipo di casa</option>
+                    <option value="2">Negozio</option>
+                    <option value="3">Monolocale</option>
+                    <option value="4">Bilocale</option>
+                    <option value="5">Villa</option>
+                    <option value="6">Attico</option>
+                    <option value="7">Ufficio</option>
+                    <option value="8">Capannone</option>
+                    <option value="9">Box</option>
+                </select>
+        </div>
+        <div class="col-3">
+            <select class="form-select" name="quartiere" aria-label="Default select example">
+                <option value="1" selected>Quartiere</option>
+                <option value="2">Trastevere</option>
+                <option value="3">Colosseo</option>
+                <option value="4">Vaticano</option>
+                <option value="5">Parioli</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary">INVIO</button>
+        </div>
+            </form>
+        </div>
+        <div class="col-3">
+            <a class="navbar-brand" href="login.php?scelta=logout">Esci</a>
+        </div>
+    </div>
+</nav>
+<br>
+<div class="container-fluid row">
+    <div class="col-3">
+        <form name="vendita" action="modifiche.php" method="post">
+            <button type="submit" class="btn btn-secondary">Vendita</button>
+        </form>
+    </div>
+    <div class="col-3">
+        <form name="Aggiungi" action="modifiche.php" method="post">
+            <button type="submit" class="btn btn-secondary">Aggiungi</button>
+        </form>
+    </div>
+</div>
     ');
 
     return;
