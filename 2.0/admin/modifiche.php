@@ -8,7 +8,7 @@
 
     writeHeader();
 
-    echo('Va tutto');
+    //echo('Va tutto');
     if($_SESSION['logged'] == true){
         writeMenu();
             switch($sc){
