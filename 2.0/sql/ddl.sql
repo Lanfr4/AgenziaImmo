@@ -10,14 +10,6 @@ CREATE TABLE CS_ACQUIRENTE(
     foreign key(idImmobileINT) references CS_IMMOBILE(id)
 )ENGINE=InnoDB;
 
-CREATE TABLE CS_VENDITORE(
-    id integer unsigned auto_increment,
-    nome varchar(20) not null,
-    cognome varchar(20) not null,
-   
-    primary key(id)
-)ENGINE=InnoDB;
-
 
 /*
 DATI CHE L' AGENZIA PUO MODIFICARE NELLA ZONA RISERVATA:
@@ -61,12 +53,12 @@ CREATE TABLE CS_VENDITA(
     prezzo float not null,
     data_di_vendita date not null,
     idAcquirente  integer unsigned,
-    idVenditore integer unsigned,
+    idAdmin integer unsigned,
     idImmobile integer unsigned,
 
     primary key(id),
     foreign key(idAcquirente) references CS_ACQUIRENTE(id),
-    foreign key(idVenditore) references CS_VENDITORE(id),
+    foreign key(idAdmin) references CS_CS_ADMIN(id),
     foreign key(idImmobile) references CS_IMMOBILE(id)
     
 )ENGINE=InnoDB;
@@ -74,6 +66,8 @@ CREATE TABLE CS_VENDITA(
 
 CREATE TABLE CS_ADMIN(
     id integer unsigned auto_increment,
+    nome varchar(20) not null,
+    cognome varchar(20) not null,
     email varchar(30) not null,
     password varchar(30) not null,
 

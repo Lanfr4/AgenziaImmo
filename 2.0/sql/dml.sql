@@ -6,13 +6,6 @@ INSERT INTO CS_ACQUIRENTE(nome, cognome,visite_fatte, capitale)
 VALUES("Petunia", "Giannizzari", 3, 1260);
 
 
-INSERT INTO CS_VENDITORE(nome, cognome)
-VALUES("Elisa" ,"Schermidori");
-INSERT INTO CS_VENDITORE(nome, cognome)
-VALUES("Benito" ,"Meloni");
-INSERT INTO CS_VENDITORE(nome, cognome)
-VALUES("Francesco", "Totti");
-
 INSERT INTO CS_IMMOBILE(stato, idType, prezzoRichiesto, superfice, idQuartiere, indirizzo, Data_disponibilita)
 VALUES("Offerto", 4, 3000 , 500, 2, "Via 1914 13A", "2025/07/04");
 INSERT INTO CS_IMMOBILE(stato,  idType, prezzoRichiesto, superfice,  idQuartiere, indirizzo, Data_disponibilita)
@@ -23,12 +16,12 @@ INSERT INTO CS_IMMOBILE(stato,  idType, prezzoRichiesto, superfice,  idQuartiere
 VALUES("Offerto", 5, 15000 , 1000, 5, "Via della Spiritualita", "2023/03/17");
 
 
-INSERT INTO CS_ADMIN(email, password)
-VALUES("agenzia1@gmail.com" , "12345678");
-INSERT INTO CS_ADMIN(email, password)
-VALUES("agenzia2@gmail.com" , "0123456789");
-INSERT INTO CS_ADMIN(email, password)
-VALUES("agenziaIssues@gmail.com" , "666104");
+INSERT INTO CS_ADMIN(nome, cognome, email, password)
+VALUES("Elisa" ,"Schermidori" , "agenzia1@gmail.com" , "12345678");
+INSERT INTO CS_ADMIN(nome, cognome, email, password)
+VALUES("Benito" ,"Meloni" , "agenzia2@gmail.com" , "234567");
+INSERT INTO CS_ADMIN(nome, cognome, email, password)
+VALUES("Francesco" ,"Totti" , "agenzia3@gmail.com" , "3456789");
 
 INSERT INTO CS_QUARTIERE(descrizione)
 VALUES ("Quartiere");
