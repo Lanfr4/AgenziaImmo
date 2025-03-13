@@ -93,7 +93,7 @@
                 if ($record['stato'] == "Offerto") {
                     echo('
                         <td>
-                            <form action="modifica_stato.php" method="POST" class="reservation-form">
+                            <form action="gestiscibutton.php" method="POST" class="reservation-form">
                                 <input type="hidden" name="id" value="'. $record['id'] .'">
                                 <button type="submit" class="btn btn-primary">Riservamelo</button>
                             </form>
