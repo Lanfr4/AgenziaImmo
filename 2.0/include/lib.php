@@ -83,7 +83,7 @@ function writeMenu() {
             </form>
         </div>
         <div class="col-3">
-            <a class="navbar-brand" href="login.php?scelta=logout">Esci</a>
+            <a class="navbar-brand" href="index.php.php?scelta=logout">Esci</a>
         </div>
     </div>
 </nav>
@@ -91,12 +91,12 @@ function writeMenu() {
 <div class="container-fluid row">
     <div class="col-3">
         <form name="vendita" action="modifiche.php" method="post">
-            <button type="submit" class="btn btn-secondary">Vendita</button>
+            <button type="submit" class="btn btn-primary">Vendita</button>
         </form>
     </div>
     <div class="col-3">
         <form name="Aggiungi" action="modifiche.php" method="post">
-            <button type="submit" class="btn btn-secondary">Aggiungi</button>
+            <button type="submit" class="btn btn-primary">Aggiungi</button>
         </form>
     </div>
 </div>
