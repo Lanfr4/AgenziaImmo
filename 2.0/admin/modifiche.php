@@ -9,24 +9,28 @@
     writeHeader();
 
     echo('Va tutto');
+    if($_SESSION['logged'] == true){
+        writeMenu();
+            switch($sc){
+                case "venditaAbitazione" :{
+                    
+                    exit();
+                };
 
-    writeFooter();
+                case "aggiungiAbitazione" :{
+                    
+                    exit();
+                };
 
-    switch($sc){
-        case "venditaAbitazione" :{
-            
-            exit();
-        };
+                case "gestisciAbitazione" :{
+                    
+                    exit();
+                };
+            }
+        }
+        else{
+            echo('<a href="index.php">Utente non loggato, eseguire il login</div>');
+        }
 
-        case "aggiungiAbitazione" :{
-            
-            exit();
-        };
-
-        case "gestisciAbitazione" :{
-            
-            exit();
-        };
-    }
-
+        writeFooter();
 ?>
