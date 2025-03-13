@@ -17,11 +17,11 @@
 
             $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
             $sql = "SELECT * FROM CS_ADMIN AS a WHERE email='$email' AND password='$password'";
-            echo($sql);
+            //echo($sql);
             $resultSet = $db->query($sql);
             $db->close();
 
-            if($resultSet->num_rows == 1){
+            if($resultSet->num_rows > 0){
                 $record = $resultSet->fetch_assoc();
                 $_SESSION['logged'] = true;
                 $_SESSION['idAdmin'] = $record['id'];
@@ -30,8 +30,8 @@
             }
             $_SESSION['logged'] = true;
             $_SESSION['idAdmin'] = 1;
-            $_SESSION['cognome'] = 'Pradel';
-            $_SESSION['nome'] = 'Cescoz';
+            $_SESSION['cognome'] = 'Agenzia';
+            $_SESSION['nome'] = 'Immobiliare';
             /*
             if($u == "admin" && $p=="admin"){
                 $_SESSION['logged'] = true;
