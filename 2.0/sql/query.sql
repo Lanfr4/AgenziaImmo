@@ -25,7 +25,7 @@ WHERE i.codice = 'codice_immobile_specifico';
 SELECT COUNT(visite.id) AS numero_visite, COUNT(vendite.id) AS numero_vendite
 FROM visite
 LEFT JOIN vendite ON visite.immobile_id = vendite.immobile_id
-WHERE vendite.venditore_id = 'venditore_specifico';
+WHERE vendite.admin_id_id = 'venditore_specifico';
 
 --5
 SELECT codice, indirizzo, prezzo
@@ -53,16 +53,16 @@ ORDER BY numero_immobili DESC
 LIMIT 1;
 
 --10
-SELECT venditore_id, COUNT(*) AS numero_immobili
+SELECT admin_id, COUNT(*) AS numero_immobili
 FROM immobili
-GROUP BY venditore_id
+GROUP BY admin_id
 ORDER BY numero_immobili ASC
 LIMIT 1;
 
 --11
-SELECT venditore_id, quartiere, COUNT(*) AS numero_immobili
+SELECT admin_id, quartiere, COUNT(*) AS numero_immobili
 FROM immobili
-GROUP BY venditore_id, quartiere;
+GROUP BY admin_id, quartiere;
 
 --12
 SELECT *
