@@ -93,15 +93,15 @@
                 if ($record['stato'] == "Offerto") {
                     echo('
                         <td>
-                            <form action="modifica_stato.php" method="POST" class="reservation-form">
+                            <form action="gestiscibutton.php" method="POST" class="reservation-form">
                                 <input type="hidden" name="id" value="'. $record['id'] .'">
-                                <button type="submit" class="btn btn-primary">Riservamelo</button>
+                                <button type="submit" class="btn btn-primary">Gestisci</button>
                             </form>
                         </td>
                     ');
                 } else {
                     // Se non è "Offerto", aggiungi una cella vuota o un messaggio
-                    echo('<td></td>'); // Puoi anche personalizzare questo messaggio
+                    echo('<td></td>'); 
                 }
             
                 echo('</tr>'); // Chiudi la riga della tabella

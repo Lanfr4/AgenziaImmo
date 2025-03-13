@@ -17,7 +17,6 @@
 
             $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME);
             $sql = "SELECT * FROM CS_ADMIN AS a WHERE email='$email' AND password='$password'";
-            //echo($sql);
             $resultSet = $db->query($sql);
             $db->close();
 
@@ -32,13 +31,7 @@
             $_SESSION['idAdmin'] = 1;
             $_SESSION['cognome'] = 'Agenzia';
             $_SESSION['nome'] = 'Immobiliare';
-            /*
-            if($u == "admin" && $p=="admin"){
-                $_SESSION['logged'] = true;
-            }
-            else{
-                echo('<div class="alert alert-warning">Credenziali non valide</div>');
-            }*/
+            
             if($sc == "logout"){
                 $_SESSION['logged'] = false;
                 session_destroy();
