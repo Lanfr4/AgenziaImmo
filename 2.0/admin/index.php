@@ -29,8 +29,8 @@
             }
             $_SESSION['logged'] = true;
             $_SESSION['idAdmin'] = 1;
-            $_SESSION['cognome'] = $record['cognome'];
-            $_SESSION['nome'] = $record['nome'];
+            $_SESSION['cognome'] = "Agenzia";
+            $_SESSION['nome'] = "Immobiliare";
             
             if($sc == "logout"){
                 $_SESSION['logged'] = false;

@@ -91,25 +91,17 @@
                         <td>' . $record['superfice'] . '</td>
                         <td>' . $record['idQuartiere'] . '</td>
                         <td>' . $record['indirizzo'] . '</td>
-                        <td>' . $record['Data_disponibilita'] . '</td>');
-            
-                // Controlla se lo stato è "Offerto"
-                if ($record['stato'] == "Offerto") {
-                    echo('
+                        <td>' . $record['Data_disponibilita'] . '</td>
                         <td>
-                            <form action="gestiscibutton.php" method="POST" class="reservation-form">
+                            <form action="modifiche.php?scelta=gestisciAbitazione" method="POST" class="reservation-form">
                                 <input type="hidden" name="id" value="'. $record['id'] .'">
                                 <button type="submit" class="btn btn-primary">Gestisci</button>
                             </form>
                         </td>
+                    </tr>
                     ');
-                } else {
-                    // Se non è "Offerto", aggiungi una cella vuota o un messaggio
-                    echo('<td></td>'); 
                 }
-            
-                echo('</tr>'); // Chiudi la riga della tabella
-            }    
+                   
         echo('</tbody>
             </table>');
 

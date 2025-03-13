@@ -91,12 +91,12 @@ function writeMenu() {
 <div class="container-fluid d-flex justify-content-center">
     <div class="row">
         <div class="col-6 text-center">
-            <form name="vendita" action="modifiche.php?scelta="venditaAbitazioni" method="post">
+            <form name="vendita" action="modifiche.php?scelta=venditaAbitazione" method="post">
                 <button type="submit" class="btn btn-primary">Vendita</button>
             </form>
         </div>
         <div class="col-6 text-center">
-            <form name="Aggiungi" action="modifiche.php?scelta = "aggiungiAbitazioni"  method="post">
+            <form name="Aggiungi" action="modifiche.php?scelta=aggiungiAbitazione"  method="post">
                 <button type="submit" class="btn btn-primary">Aggiungi</button>
             </form>
         </div>

@@ -3,6 +3,6 @@
 se decide di loggarsi passa alla zona amministratore solo per l' utente dell' agenzia,
 altrimenti passa direttamente alla zona pubblica*/
     
-    header("location: ./admin/login.php");
+    header("location: ./admin/index.php");
 
 ?>
