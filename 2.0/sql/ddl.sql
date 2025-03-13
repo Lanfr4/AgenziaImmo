@@ -58,7 +58,7 @@ CREATE TABLE CS_VENDITA(
 
     primary key(id),
     foreign key(idAcquirente) references CS_ACQUIRENTE(id),
-    foreign key(idAdmin) references CS_CS_ADMIN(id),
+    foreign key(idAdmin) references CS_ADMIN(id),
     foreign key(idImmobile) references CS_IMMOBILE(id)
     
 )ENGINE=InnoDB;
