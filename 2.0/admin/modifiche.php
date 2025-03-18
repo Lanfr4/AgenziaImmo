@@ -15,7 +15,7 @@
                 case "aggiungiAbitazione" :{// Sebastiano
                     echo('
                             <h3>Aggiungi Immobile</h3><br>
-                                <form action="aggiungiAbitazioni.php" method="post">
+                                <form action="aggiungi.php" method="post">
                                     <select class="form-select" name="tipodiCasa" aria-label="Default select example">
                                         <option value="1" selected>Seleziona tipo di casa</option>
                                         <option value="2">Negozio</option>
