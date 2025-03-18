@@ -52,12 +52,12 @@ CREATE TABLE CS_VENDITA(
     id integer unsigned auto_increment,
     prezzo float not null,
     data_di_vendita date not null,
-    idAcquirente  integer unsigned,
+    idAdmin  integer unsigned,
     idAdmin integer unsigned,
     idImmobile integer unsigned,
 
     primary key(id),
-    foreign key(idAcquirente) references CS_ACQUIRENTE(id),
+    foreign key(idAdmin) references CS_ADMIN(id),
     foreign key(idAdmin) references CS_ADMIN(id),
     foreign key(idImmobile) references CS_IMMOBILE(id)
     
