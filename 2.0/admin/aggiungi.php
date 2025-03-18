@@ -10,6 +10,7 @@
 
     if($_SESSION['logged'] == true){
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
+        writeMenu();
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $tipocasa = $_POST['tipodiCasa'];
             $quartiere = $_POST['quartiere'];
@@ -19,15 +20,18 @@
             $prezzoRichiesto = $_POST['prezzoRichiesto'];
             $stato ='Offerto'; // lo devo mettere offerto perche sta inserendo una nuova abitazione :) 
         }
-        echo($tipocasa);
-        echo('<br>');
-        echo($quartiere);
-
+        
         if($quartiere >1 &&  $tipocasa >1){
-            echo('tutto ancora + apposto');
+            $sql = "INSERT INTO CS_IMMOBILE(stato, idType, prezzoRichiesto, superfice, idQuartiere, indirizzo, Data_disponibilita)
+                    VALUES($stato, $tipocasa, $prezzoRichiesto, $superfice, $quartiere, $indirizzo, $data);";
+            
+            $resultSet= $db->query($sql);
+
+
+            echo('<a href="index.php">Una nuova abitazione è stata aggiunta, puoi ritornare indietro</div>');
         }
         else{
-            echo('<a href="index.php">Hai inserito delle credenziali sabgliate, riprova</div>');
+            echo('<a href="index.php">Hai inserito delle credenziali sbagliate, riprova</div>');
         }
     }
     else{
