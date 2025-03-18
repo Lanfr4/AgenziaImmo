@@ -12,16 +12,10 @@
     if($_SESSION['logged'] == true){
         writeMenu();
             switch($sc){
-                case "venditaAbitazione" :{ // Bho
-                    
-                    break;
-                };
-
                 case "aggiungiAbitazione" :{// Sebastiano
                     
                     break;
                 };
-
                 case "gestisciAbitazione" :{ //Sasso
                     
                     break;
