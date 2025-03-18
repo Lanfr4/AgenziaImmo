@@ -12,7 +12,7 @@
     if($_SESSION['logged'] == true){
         writeMenu();
             switch($sc){
-                case "aggiungiAbitazione" :{// Sebastiano
+                case "aggiungiAbitazione" :{
                     echo('
                             <h3>Aggiungi Immobile</h3><br>
                                 <form action="aggiungi.php" method="post">
