@@ -18,22 +18,18 @@
             $id = $_POST['id'];
         }
 
+        //echo($id);
+
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
 
-        $sql = "DELETE * FROM CS_IMMOBILE AS imm WHERE $id= imm.id";
+        $sql = "DELETE  FROM CS_IMMOBILE AS imm WHERE $id= imm.id";
         
         $resultSet = $db->query($sql);
-
-        if($resultSet->num_rows>=1 ){
+ 
             echo('<a href="index.php">L Immobile è stato venduto con successo </div>');
-        }
-        else{
-            echo('<a href="index.php">La vendita non è andata a buon fine </div>');
-
-        }
     }
     else{
-        echo('<a href="index.php">Utente non loggato, eseguire il login</div>');
+        echo('<a href="home.php">Utente non loggato, eseguire il login</div>');
     }
 
 
