@@ -53,9 +53,11 @@
                     ');
                     break;
                 };
-                case "gestisciAbitazione" :{ //Sasso
-                    /* dento ltre che alla gestione di un immobile gia presente faremo anche la vendita dello stesso immobile, 
-                    forse creeremo un altro pulsante per ogni riga come il gestisci, che converrebbe che cosi sappiamo l' ID dell' Immobile */
+                case "gestisciAbitazione" :{ //Sasso, affianco al pulsante gestisci fai pure il òulsante vendita
+                    break;
+                };
+                case "venditaAbitazioni" :{
+
                     break;
                 };
             }
