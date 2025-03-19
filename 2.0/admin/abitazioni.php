@@ -89,6 +89,12 @@
                                 <button type="submit" class="btn btn-primary">Gestisci</button>
                             </form>
                         </td>
+                        <td>
+                            <form action="modifiche.php?scelta=venditaAbitazione" method="POST" class="reservation-form">
+                                <input type="hidden" name="id" value="'. $record['id'] .'">
+                                <button type="submit" class="btn btn-primary">Vendita</button>
+                            </form>
+                        </td>
                     </tr>
                     ');
                 }
