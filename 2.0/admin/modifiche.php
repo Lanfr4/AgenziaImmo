@@ -63,27 +63,32 @@
                         $id = $_POST['id'];
                     }
 
-                    echo($id);
+                    //echo($id);
 
                     $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
 
-                    $sql ="SELECT * FROM CS_IMMOBILE AS imm WHERE  $id = 'id'";
+                    $sql ="SELECT * FROM CS_IMMOBILE AS imm WHERE  $id = imm.id";
 
                     $resultSet = $db->query($sql);
 
+
+
                     while ($record = $resultSet->fetch_assoc()) {
-                        echo '<li>
+                        echo ('<li>
                                 <div>
-                                    <strong>ID:</strong> ' . $record['id'] . '<br>
                                     <strong>Stato:</strong> <span class="status" id="status-' . $record['id'] . '">' . $record['stato'] . '</span><br>
                                     <strong>Tipo:</strong> ' . $record['idType'] . '<br>
                                     <strong>Prezzo Richiesto:</strong> ' . $record['prezzoRichiesto'] . '<br>
                                     <strong>Superficie:</strong> ' . $record['superfice'] . '<br>
-                                    <strong>ID Quartiere:</strong> ' . $record['idQuartiere'] . '<br>
+                                    <strong>Quartiere:</strong> ' . $record['idQuartiere'] . '<br>
                                     <strong>Indirizzo:</strong> ' . $record['indirizzo'] . '<br>
                                     <strong>Data Disponibilità:</strong> ' . $record['Data_disponibilita'] . '<br>
+                                    <form name="Aggiungi" action="vendita.php"  method="post">
+                                        <button type="submit" class="btn btn-primary">Completa Transazione</button>
+                                    </form>
+                            </form>
                                 </div>
-                            </li>';
+                            </li>');
                     }
                 };
             }
