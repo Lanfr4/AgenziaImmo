@@ -36,6 +36,7 @@
                         <th scope="col">Indirizzo</th>
                         <th scope="col">Data Disponibilità</th>
                         <th scope="col">Azione</th>
+                        <th scope="col">Transazione</th>
                     </tr>
                 </thead>
                 <tbody>');
