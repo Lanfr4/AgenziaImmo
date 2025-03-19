@@ -63,15 +63,13 @@
                         $id = $_POST['id'];
                     }
 
-                    //echo($id);
+                    echo($id);
 
                     $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
 
                     $sql ="SELECT * FROM CS_IMMOBILE AS imm WHERE  $id = 'id'";
 
                     $resultSet = $db->query($sql);
-
-                    echo '<ul class="record-list">'; // Inizio dell'elenco
 
                     while ($record = $resultSet->fetch_assoc()) {
                         echo '<li>
@@ -87,8 +85,6 @@
                                 </div>
                             </li>';
                     }
-
-                            echo '</ul>'; // Fine dell'elenco
                 };
             }
         }
