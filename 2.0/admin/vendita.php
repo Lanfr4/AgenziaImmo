@@ -25,10 +25,10 @@
         $resultSet = $db->query($sql);
 
         if($resultSet->num_rows>=1 ){
-            echo('<a href="abitazioni">L Immobile è stato vebduto con successo </div>');
+            echo('<a href="index.php">L Immobile è stato venduto con successo </div>');
         }
         else{
-            echo('<a href="abitazioni">La vendita n on è andata a buon fine </div>');
+            echo('<a href="index.php">La vendita non è andata a buon fine </div>');
 
         }
     }

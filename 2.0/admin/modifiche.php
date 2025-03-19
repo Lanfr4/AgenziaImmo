@@ -76,14 +76,14 @@
                     while ($record = $resultSet->fetch_assoc()) {
                         echo ('<li>
                                 <div>
-                                    <strong>Stato:</strong> <span class="status" id="status-' . $record['id'] . '">' . $record['stato'] . '</span><br>
+                                    <strong>Stato:</strong> <span class="status"  id="status-' . $record['id'] . '">' . $record['stato'] . '</span><br>
                                     <strong>Tipo:</strong> ' . $record['idType'] . '<br>
                                     <strong>Prezzo Richiesto:</strong> ' . $record['prezzoRichiesto'] . '<br>
                                     <strong>Superficie:</strong> ' . $record['superfice'] . '<br>
                                     <strong>Quartiere:</strong> ' . $record['idQuartiere'] . '<br>
                                     <strong>Indirizzo:</strong> ' . $record['indirizzo'] . '<br>
                                     <strong>Data Disponibilità:</strong> ' . $record['Data_disponibilita'] . '<br>
-                                    <form name="Aggiungi" action="vendita.php"  method="post">
+                                    <form name="id" value="'. $record['id'] .'" action="vendita.php"  method="post">
                                         <button type="submit" class="btn btn-primary">Completa Transazione</button>
                                     </form>
                             </form>

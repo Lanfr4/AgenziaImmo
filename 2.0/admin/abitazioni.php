@@ -40,6 +40,7 @@
                     </tr>
                 </thead>
                 <tbody>');
+                
             if($tipocasa>1 || $quartiere>1){
                 if($tipocasa>1 && $quartiere == 1){
                     //echo ("toc toc");
