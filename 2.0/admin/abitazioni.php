@@ -108,7 +108,7 @@
         $db->close();
         }
         else{
-            echo('<a href="index.php">Utente non loggato, eseguire il login</div>');
+            echo('<a href="home.php">Utente non loggato, eseguire il login</div>');
         }
 
     writefooter();

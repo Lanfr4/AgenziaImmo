@@ -22,11 +22,18 @@
 
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
 
-        $sql = "DELETE  FROM CS_IMMOBILE AS imm WHERE $id= imm.id";
+        $sql = "DELETE  FROM CS_IMMOBILE WHERE id = '$id'";
         
         $resultSet = $db->query($sql);
- 
+        
+        echo($sql);
+
+        if($db->affected_rows>0){
             echo('<a href="index.php">L Immobile è stato venduto con successo </div>');
+        }
+        else{
+            echo('<a href="index.php">L Immobile NON  è stato venduto con successo </div>');
+            }
     }
     else{
         echo('<a href="home.php">Utente non loggato, eseguire il login</div>');
