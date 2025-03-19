@@ -58,6 +58,12 @@
                 };
                 case "venditaAbitazioni" :{
 
+                    $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        // Recupera i dati dal modulo
+                        $tipocasa = $_POST['tipodiCasa'];
+                        $quartiere = $_POST['quartiere'];
+                    }
                     break;
                 };
             }
