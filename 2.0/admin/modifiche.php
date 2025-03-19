@@ -56,13 +56,39 @@
                 case "gestisciAbitazione" :{ //Sasso, affianco al pulsante gestisci fai pure il òulsante vendita
                     break;
                 };
-                case "venditaAbitazioni" :{
+                case "venditaAbitazione" :{
 
-                    echo('
-                    
-                    
-                    
-                    ');
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        // Recupera i dati dal modulo
+                        $id = $_POST['id'];
+                    }
+
+                    //echo($id);
+
+                    $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
+
+                    $sql ="SELECT * FROM CS_IMMOBILE AS imm WHERE  $id = 'id'";
+
+                    $resultSet = $db->query($sql);
+
+                    echo '<ul class="record-list">'; // Inizio dell'elenco
+
+                    while ($record = $resultSet->fetch_assoc()) {
+                        echo '<li>
+                                <div>
+                                    <strong>ID:</strong> ' . $record['id'] . '<br>
+                                    <strong>Stato:</strong> <span class="status" id="status-' . $record['id'] . '">' . $record['stato'] . '</span><br>
+                                    <strong>Tipo:</strong> ' . $record['idType'] . '<br>
+                                    <strong>Prezzo Richiesto:</strong> ' . $record['prezzoRichiesto'] . '<br>
+                                    <strong>Superficie:</strong> ' . $record['superfice'] . '<br>
+                                    <strong>ID Quartiere:</strong> ' . $record['idQuartiere'] . '<br>
+                                    <strong>Indirizzo:</strong> ' . $record['indirizzo'] . '<br>
+                                    <strong>Data Disponibilità:</strong> ' . $record['Data_disponibilita'] . '<br>
+                                </div>
+                            </li>';
+                    }
+
+                            echo '</ul>'; // Fine dell'elenco
                 };
             }
         }

@@ -14,6 +14,9 @@
         writeMenu();
 
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
+
+        
+
     }
     else{
         echo('<a href="index.php">Utente non loggato, eseguire il login</div>');
