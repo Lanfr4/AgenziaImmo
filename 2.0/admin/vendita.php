@@ -26,7 +26,7 @@
         
         $resultSet = $db->query($sql);
         
-        echo($sql);
+        //echo($sql);
 
         if($db->affected_rows>0){
             echo('<a href="index.php">L Immobile è stato venduto con successo </div>');
