@@ -13,11 +13,6 @@
         writeMenu();
             switch($sc){
                 case "aggiungiAbitazione" :{
-<<<<<<< HEAD
-                    
-                    exit();
-                };
-=======
                     echo('
                             <h3>Aggiungi Immobile</h3><br>
                                 <form action="aggiungi.php" method="post">
@@ -32,7 +27,6 @@
                                         <option value="8">Capannone</option>
                                         <option value="9">Box</option>
                                     </select><br>
->>>>>>> 34996ae555487ed3d7cf18ea64a15b02ac5ff203
 
                                     <label for="prezzoRichiesto">Prezzo Richiesto:</label>
                                     <input type="number" step="0.01" id="prezzoRichiesto" name="prezzoRichiesto" required><br><br>
@@ -59,16 +53,46 @@
                     ');
                     break;
                 };
-                case "gestisciAbitazione" :{ //Sasso
+                case "gestisciAbitazione" :{ 
                     
-                    
-                    
-                    /* dento ltre che alla gestione di un immobile gia presente faremo anche la vendita dello stesso immobile, 
-                    forse creeremo un altro pulsante per ogni riga come il gestisci, che converrebbe che cosi sappiamo l' ID dell' Immobile */
+                    //Sasso, affianco al pulsante gestisci fai pure il òulsante vendita
                     break;
                 };
+                case "venditaAbitazione" :{
+
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        // Recupera i dati dal modulo
+                        $id = $_POST['id'];
+                    }
+
+                    //echo($id);
+
+                    $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
+
+                    $sql ="SELECT * FROM CS_IMMOBILE AS imm WHERE  $id = imm.id";
+
+                    $resultSet = $db->query($sql);
+
+                    while ($record = $resultSet->fetch_assoc()) {
+                        echo ('<li>
+                                <div>
+                                    <form action="vendita.php" method="post">
+                                        <input type="hidden" name="id" value="' . $record['id'] . '">
+                                        <strong>Stato:</strong> <span class="status" id="status-' . $record['id'] . '">' . $record['stato'] . '</span><br>
+                                        <strong>Tipo:</strong> ' . $record['idType'] . '<br>
+                                        <strong>Prezzo Richiesto:</strong> ' . $record['prezzoRichiesto'] . '<br>
+                                        <strong>Superficie:</strong> ' . $record['superfice'] . '<br>
+                                        <strong>Quartiere:</strong> ' . $record['idQuartiere'] . '<br>
+                                        <strong>Indirizzo:</strong> ' . $record['indirizzo'] . '<br>
+                                        <strong>Data Disponibilità:</strong> ' . $record['Data_disponibilita'] . '<br><br>
+                                        <button type="submit" class="btn btn-primary">Completa Transazione</button>
+                                    </form>
+                                </div>
+                            </li>');
+                    }
             }
         }
+    }
         else{
             echo('<a href="index.php">Utente non loggato, eseguire il login</div>');
         }

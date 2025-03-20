@@ -36,9 +36,11 @@
                         <th scope="col">Indirizzo</th>
                         <th scope="col">Data Disponibilità</th>
                         <th scope="col">Azione</th>
+                        <th scope="col">Transazione</th>
                     </tr>
                 </thead>
                 <tbody>');
+                
             if($tipocasa>1 || $quartiere>1){
                 if($tipocasa>1 && $quartiere == 1){
                     //echo ("toc toc");
@@ -89,6 +91,12 @@
                                 <button type="submit" class="btn btn-primary">Gestisci</button>
                             </form>
                         </td>
+                        <td>
+                            <form action="modifiche.php?scelta=venditaAbitazione" method="POST" class="reservation-form">
+                                <input type="hidden" name="id" value="'. $record['id'] .'">
+                                <button type="submit" class="btn btn-primary">Vendita</button>
+                            </form>
+                        </td>
                     </tr>
                     ');
                 }
@@ -100,7 +108,7 @@
         $db->close();
         }
         else{
-            echo('<a href="index.php">Utente non loggato, eseguire il login</div>');
+            echo('<a href="home.php">Utente non loggato, eseguire il login</div>');
         }
 
     writefooter();
