@@ -54,9 +54,21 @@
                     break;
                 };
                 case "gestisciAbitazione" :{ 
+
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        // Recupera i dati dal modulo
+                        $id = $_POST['id'];
+                    }
+
+                    echo('<h3>Gestisci</h3><br>
+                                <form action="aggiungi.php" method="post">
+                                
+                        
+                        
+                        ')
                     
-                    //Sasso, affianco al pulsante gestisci fai pure il òulsante vendita
                     break;
+
                 };
                 case "venditaAbitazione" :{
 
