@@ -23,13 +23,13 @@
                 $record = $resultSet->fetch_assoc();
                 $_SESSION['logged'] = true;
                 $_SESSION['idAdmin'] = $record['id'];
-                $_SESSION['email'] = $record['email'];
-                $_SESSION['password'] = $record['password'];
+                $_SESSION['cognome'] = $record['cognome'];
+                $_SESSION['nome'] = $record['nome'];
             }
-            $_SESSION['logged'] = true;
+            /*$_SESSION['logged'] = true;
             $_SESSION['idAdmin'] = 1;
             $_SESSION['cognome'] =  "Agenzia";
-            $_SESSION['nome'] = "Immobiliare";
+            $_SESSION['nome'] = "Immobiliare";*/
             
             if($sc == "logout"){
                 $_SESSION['logged'] = false;
