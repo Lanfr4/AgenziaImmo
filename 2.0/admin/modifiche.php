@@ -94,6 +94,12 @@
                                         <strong>Quartiere:</strong> ' . $record['idQuartiere'] . '<br>
                                         <strong>Indirizzo:</strong> ' . $record['indirizzo'] . '<br>
                                         <strong>Data Disponibilità:</strong> ' . $record['Data_disponibilita'] . '<br><br>
+                                            <select class="form-select" name="idAcq" aria-label="Default select example">
+                                            <option value="0" >Selezioa Albergatore</option>
+                                            <option value ="1">Gianmarco Esdrongo</option>
+                                            <option value="2">Elena Battipanni</option>
+                                            <option value="3">Petunia Giannizzari</option>
+                                        </select><br>
                                         <button type="submit" class="btn btn-primary">Completa Transazione</button>
                                     </form>
                                 </div>

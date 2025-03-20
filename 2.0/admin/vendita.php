@@ -16,13 +16,15 @@
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Recupera i dati dal modulo
             $id = $_POST['id'];
+            $idAcq = $_POST['idAcq'];
         }
-
-        //echo($id);
 
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
 
-        $sql = "DELETE  FROM CS_IMMOBILE WHERE id = '$id'";
+        $sql = "SELECT * FROM CS_VENDITA AS v 
+        WHERE v.idAcquirente='$idAcq'  AND v.idImmobile ='$id'"; 
+
+        //$sql = "DELETE  FROM CS_IMMOBILE WHERE id = '$id'";
         
         $resultSet = $db->query($sql);
         
