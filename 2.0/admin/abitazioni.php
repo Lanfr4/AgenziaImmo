@@ -31,7 +31,7 @@
                         <th scope="col">Stato</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Prezzo Richiesto</th>
-                        <th scope="col">Superficie</th>
+                        <th scope="col">Superfice</th>
                         <th scope="col">Quartiere</th>
                         <th scope="col">Indirizzo</th>
                         <th scope="col">Data Disponibilità</th>
