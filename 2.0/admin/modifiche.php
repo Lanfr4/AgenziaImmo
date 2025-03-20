@@ -62,10 +62,7 @@
 
                     echo('<h3>Gestisci</h3><br>
                                 <form action="aggiungi.php" method="post">
-                                
-                        
-                        
-                        ')
+                        ');
                     
                     break;
 
