@@ -1,74 +1,21 @@
 --QUERY DELLA PROPOSTA 4
 ----------------------
+--1 Elenco degli immobili (con codice, indirizzo, prezzo) che soddisfano alle richieste di un acquirente, 
+--usando come criteri di ricerca: limite di prezzo, quartiere di collocazione, tipologia di immobili;
+--2lenco degli immobili di un certo quartiere 
+--(con codice, indirizzo, tipologia di immobile e prezzo) che sono immediatamente disponibili e nello stato "offerto";
+--3 Elenco (con codice, indirizzo, tipologia di immobile e prezzo) 
+--degli immobili di un quartiere per i quali è in atto una trattativa, ordinato per tipologia di immobile e per prezzo;
+--4 Numero di telefono dell’acquirente o del proprietario di un dato immobile per organizzare una visita;
+--5Numero di visite effettuate e numero di vendite ottenute, nell’ultimo mese, da parte di un venditore;
+--6Elenco degli immobili di tipo villa per i quali non sia state trattative;
+--7Numero totale delle visite eseguite nell’ultimo anno;
+--8Totale del venduto e delle provvigioni di ogni venditore nell’ultimo anno;
+--9Elenco degli immobili venduti e per ciascuno: prezzo richiesto, prezzo di vendita, numero di clienti interessati, numero di visite eseguite;
+--10Nome del quartiere con il maggior numero di immobili in archivio;
+--11Nome del venditore con il minor numero di immobili attribuiti;
 
---1
-SELECT codice, indirizzo, prezzo
-FROM immobili
-WHERE prezzo <= limite_prezzo 
-  AND quartiere = 'quartiere_specifico' 
-  AND tipologia IN ('tipologia_immobile_1', 'tipologia_immobile_2', ...);
 
---2
-SELECT codice, indirizzo, tipologia, prezzo
-FROM immobili
-WHERE quartiere = 'quartiere_specifico'
-  AND stato = 'offerto';
-
---3
-SELECT a.numero_telefono AS telefono_acquirente, p.numero_telefono AS telefono_proprietario
-FROM immobili i
-JOIN acquirenti a ON i.acquirente_id = a.id
-JOIN proprietari p ON i.proprietario_id = p.id
-WHERE i.codice = 'codice_immobile_specifico';
-
---4
-SELECT COUNT(visite.id) AS numero_visite, COUNT(vendite.id) AS numero_vendite
-FROM visite
-LEFT JOIN vendite ON visite.immobile_id = vendite.immobile_id
-WHERE vendite.admin_id_id = 'venditore_specifico';
-
---5
-SELECT codice, indirizzo, prezzo
-FROM immobili
-WHERE tipologia = 'villa';
-
---6
-SELECT COUNT(*)
-FROM visite
-WHERE data_visita >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR);
-
---7
-SELECT SUM(prezzo_vendita) AS totale_venduto, SUM(provvigione) AS totale_provvigioni
-FROM vendite;
-
---8
-SELECT codice, prezzo_richiesto, prezzo_vendita, numero_clienti, numero_visite
-FROM vendite;
-
---9
-SELECT quartiere, COUNT(*) AS numero_immobili
-FROM immobili
-GROUP BY quartiere
-ORDER BY numero_immobili DESC
-LIMIT 1;
-
---10
-SELECT admin_id, COUNT(*) AS numero_immobili
-FROM immobili
-GROUP BY admin_id
-ORDER BY numero_immobili ASC
-LIMIT 1;
-
---11
-SELECT admin_id, quartiere, COUNT(*) AS numero_immobili
-FROM immobili
-GROUP BY admin_id, quartiere;
-
---12
-SELECT *
-FROM immobili
-WHERE tipologia = 'quadrilocale'
-  AND prezzo = 'prezzo_specifico';
 
 
   
