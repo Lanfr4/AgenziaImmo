@@ -86,23 +86,25 @@
                         echo ('
                                 <div>
                                     <form action="vendita.php" method="post">
+                                        <h3> Vendita </h3>
                                         <input type="hidden" name="id" value="' . $record['id'] . '">
-                                        <strong>Stato:</strong> <span class="status" id="status-' . $record['id'] . '>' . $record['stato'] . '</span><br>
-                                        <strong>Tipo:</strong> ' . $record['idType'] . '<br>
-                                        <strong>Prezzo Richiesto:</strong> ' . $record['prezzoRichiesto'] . '<br>
-                                        <strong>Superficie:</strong> ' . $record['superfice'] . '<br>
-                                        <strong>Quartiere:</strong> ' . $record['idQuartiere'] . '<br>
-                                        <strong>Indirizzo:</strong> ' . $record['indirizzo'] . '<br>
-                                        <strong>Data Disponibilità:</strong> ' . $record['Data_disponibilita'] . '<br><br>
-                                            <select class="form-select" name="idAcq" aria-label="Default select example">
-                                            <option value="0" >Selezioa Albergatore</option>
-                                            <option value ="1">Gianmarco Esdrongo</option>
+                                        Stato: <span class="status" id="status-' . $record['id'] . '">' . $record['stato'] . '</span><br>
+                                        Tipo: ' . $record['idType'] . '<br>
+                                        Prezzo Richiesto: ' . $record['prezzoRichiesto'] . '<br>
+                                        Superficie: ' . $record['superfice'] . '<br>
+                                        Quartiere: ' . $record['idQuartiere'] . '<br>
+                                        Indirizzo: ' . $record['indirizzo'] . '<br>
+                                        Data Disponibilità: ' . $record['Data_disponibilita'] . '<br><br>
+                                        <select class="form-select" name="idAcq" aria-label="Default select example">
+                                            <option value="0">Seleziona Acquirente</option>
+                                            <option value="1">Gianmarco Esdrongo</option>
                                             <option value="2">Elena Battipanni</option>
                                             <option value="3">Petunia Giannizzari</option>
                                         </select><br>
                                         <button type="submit" class="btn btn-primary">Completa Transazione</button>
                                     </form>
-                                </div>');
+                                </div>
+                            ');
                     }
             }
         }
