@@ -21,21 +21,21 @@
 
         $db = new mysqli($DBHOST, $DBUSER, $DBPASSWORD, $DBNAME); 
 
-        $sql = "SELECT * FROM CS_VENDITA AS v 
-        WHERE v.idAcquirente='$idAcq'  AND v.idImmobile ='$id'"; 
+       $sql ="SELECT * FROM CS_IMMOBILE AS imm, CS_ACQUIRENTE AS acq
+       WHERE $id = imm.id AND $idACQ = acq.id"; 
+       
+       echo($sql);
 
-        //$sql = "DELETE  FROM CS_IMMOBILE WHERE id = '$id'";
-        
-        $resultSet = $db->query($sql);
-        
+       /*$resultSet = $db->query($sql);
+
+       if($resultSet->num_rows>=1){
+         
+       }
+       else{
+
+       }  
         //echo($sql);
-
-        if($db->affected_rows>0){
-            echo('<a href="index.php">L Immobile è stato venduto con successo </div>');
-        }
-        else{
-            echo('<a href="index.php">L Immobile NON  è stato venduto con successo </div>');
-            }
+    }*/
     }
     else{
         echo('<a href="home.php">Utente non loggato, eseguire il login</div>');
