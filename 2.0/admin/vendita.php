@@ -55,7 +55,7 @@
 
         $resultSet= $db->query($sql4);
 
-        echo($sql4);
+        //echo($sql4);
 
         echo('<a href="index.php">Vendita avvenuta con successo </div>');
 
