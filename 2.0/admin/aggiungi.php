@@ -25,19 +25,19 @@
             $sql = "INSERT INTO CS_IMMOBILE(stato, idType, prezzoRichiesto, superfice, idQuartiere, indirizzo, Data_disponibilita)
                     VALUES('$stato', '$tipocasa', '$prezzoRichiesto', '$superfice', '$quartiere', '$indirizzo', '$data');";
             
-            echo($sql);
+            //echo($sql);
 
             $resultSet= $db->query($sql);
 
 
-            //echo('<a href="index.php">Una nuova abitazione è stata aggiunta, puoi ritornare indietro</div>');
+            echo('<a href="index.php">Una nuova abitazione è stata aggiunta, puoi ritornare indietro</div>');
         }
         else{
             echo('<a href="index.php">Hai inserito delle credenziali sbagliate, riprova</div>');
         }
     }
     else{
-            echo('<a href="index.php">Utente non loggato, eseguire il login</div>');
+            echo('<a href="home.php">Utente non loggato, eseguire il login</div>');
         }
 
 
