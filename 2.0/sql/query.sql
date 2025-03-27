@@ -2,10 +2,23 @@
 ----------------------
 --1 Elenco degli immobili (con codice, indirizzo, prezzo) che soddisfano alle richieste di un acquirente, 
 --usando come criteri di ricerca: limite di prezzo, quartiere di collocazione, tipologia di immobili;
+SELECT codice, indirizzo, prezzo
+FROM immobili
+WHERE prezzo <= limite_prezzo AND quartiere = idQuartiere AND tipologia = idType;
+
 --2lenco degli immobili di un certo quartiere 
 --(con codice, indirizzo, tipologia di immobile e prezzo) che sono immediatamente disponibili e nello stato "offerto";
+SELECT codice, indirizzo, tipologia, prezzo
+FROM immobili
+WHERE quartiere = :quartiere AND stato = 'offerto';
+
 --3 Elenco (con codice, indirizzo, tipologia di immobile e prezzo) 
 --degli immobili di un quartiere per i quali è in atto una trattativa, ordinato per tipologia di immobile e per prezzo;
+SELECT codice, indirizzo, tipologia, prezzo
+FROM immobili
+WHERE quartiere = idQuartiere AND stato = 'in trattativa'
+ORDER BY tipologia, prezzo;
+
 --4 Numero di telefono dell’acquirente o del proprietario di un dato immobile per organizzare una visita;
 --5Numero di visite effettuate e numero di vendite ottenute, nell’ultimo mese, da parte di un venditore;
 --6Elenco degli immobili di tipo villa per i quali non sia state trattative;
