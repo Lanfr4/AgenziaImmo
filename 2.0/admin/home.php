@@ -26,9 +26,6 @@
                 $_SESSION['cognome'] = $record['cognome'];
                 $_SESSION['nome'] = $record['nome'];
             }
-            else{
-                header('home.php');
-            }
             /*$_SESSION['logged'] = true;
             $_SESSION['idAdmin'] = 1;
             $_SESSION['cognome'] =  "Agenzia";
