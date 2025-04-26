@@ -10,7 +10,7 @@
 
     // arrivo alla pagina dopo aver inserito le credenziali
     // per eseguire un login come admin. (ci arrivo da un form).
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['logged'] == true) {
 
             $email = $_REQUEST['email'];
             $password = $_REQUEST['password'];
@@ -25,9 +25,6 @@
                 $_SESSION['idAdmin'] = $record['id'];
                 $_SESSION['cognome'] = $record['cognome'];
                 $_SESSION['nome'] = $record['nome'];
-            }
-            else{
-                header('home.php');
             }
             /*$_SESSION['logged'] = true;
             $_SESSION['idAdmin'] = 1;
